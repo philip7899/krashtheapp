@@ -1,1 +1,4 @@
-<%= @krash %>
+<%= simple_form_for @question do |f| %>
+  <%= f.input :content %>
+  <%= f.button :submit %>
+<% end %>
