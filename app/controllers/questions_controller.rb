@@ -7,7 +7,12 @@ class QuestionsController < ApplicationController
 	def create
 		@question = Question.new(question_params)
 		@question.save
-		render 'new'
+		flash['success'] = "You have asked a question"
+		redirect_to question_path(@question)
+	end
+
+	def show
+		@question = Question.find(params['id'])
 	end
 
 	private
